@@ -35,4 +35,8 @@ describe('PhoneCat controllers', function() {
 
 
 	});
+
+	describe('PhoneDetailCtrl', function(){
+	});
+
 });

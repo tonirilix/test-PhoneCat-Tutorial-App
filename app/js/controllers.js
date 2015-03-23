@@ -2,18 +2,22 @@
 
 /* Controllers */
 /**
-* phonecatApp Module;
+* phonecatControllers Module;
 *
 * Description
 */
-var phonecatApp = angular.module('phonecatApp', []);
+var phonecatControllers = angular.module('phonecatControllers', []);
 
-phonecatApp.controller('PhoneListCtrl',['$scope', '$http',
+phonecatControllers.controller('PhoneListCtrl',['$scope', '$http',
 	function($scope, $http){
-	$scope.name = "World";
-	$http.get('phones/phones.json').success(function(data){
-		$scope.phones = data;
-	});
-  $scope.orderProp = 'age';
+		$scope.name = "World";
+		$http.get('phones/phones.json').success(function(data){
+			$scope.phones = data;
+		});
+	  $scope.orderProp = 'age';
+}]);
 
+phonecatControllers.controller('PhoneDetailCtrl', ['$scope', '$routeParams', 
+	function($scope, $routeParams){
+		$scope.phoneId = $routeParams.phoneId;
 }])

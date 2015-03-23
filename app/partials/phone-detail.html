@@ -5,15 +5,16 @@
 {{ 1304375948024 | date }}
 {{ 1304375948024 | date:"MM/dd/yyyy @ h:mma" }}
 
-<img ng-src="{{phone.images[0]}}" class="phone">
+<button ng-click="hello('Elmo')">Hello</button>
+
+<img ng-src="{{mainImageUrl}}" class="phone">
 
 <h1>{{phone.name}}</h1>
-
 <p>{{phone.description}}</p>
 
 <ul class="phone-thumbs">
   <li ng-repeat="img in phone.images">
-    <img ng-src="{{img}}">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
   </li>
 </ul>
 
